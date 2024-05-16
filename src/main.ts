@@ -6,6 +6,32 @@ console.log('Script started successfully');
 
 let currentPopup: any = undefined;
 
+var btnImageFfm = "https://dbs-evs.github.io/tag-der-ausbildung-24/images/button_bubble_black.png";
+var btnImageBln = "https://dbs-evs.github.io/tag-der-ausbildung-24/images/button_bubble_red.png";
+var btnImageEf = "https://dbs-evs.github.io/tag-der-ausbildung-24/images/button_bubble_blue.png";
+
+// adding map navigation buttons
+WA.ui.actionBar.addButton({
+    id: "button_berlin",
+    type:"action",
+    imageSrc: btnImageBln,
+    toolTip: "Berlin"
+})
+
+WA.ui.actionBar.addButton({
+    id: "button_erfurt",
+    type:"action",
+    imageSrc: btnImageEf,
+    toolTip: "Erfurt"
+})
+
+WA.ui.actionBar.addButton({
+    id: "button_frankfurt",
+    type:"action",
+    imageSrc: btnImageFfm,
+    toolTip: "Frankfurt"
+})
+
 // Waiting for the API to be ready
 WA.onInit().then(() => {
     console.log('Scripting API ready');
