@@ -594,7 +594,7 @@
                 {
                  "name":"exitUrl",
                  "type":"string",
-                 "value":".\/tagDerAusbildung2024.tmj"
+                 "value":".\/tda_Teams.tmj"
                 }],
          "type":"tilelayer",
          "visible":true,
