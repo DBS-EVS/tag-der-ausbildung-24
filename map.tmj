@@ -3013,7 +3013,7 @@
         {
          "name":"mapDescription",
          "type":"string",
-         "value":"A perfect virtual office to get started with WorkAdventure!"
+         "value":"Umgebung f\u00fcr den Tag der Ausbildung"
         }, 
         {
          "name":"mapImage",
@@ -3023,7 +3023,7 @@
         {
          "name":"mapName",
          "type":"string",
-         "value":"Office"
+         "value":"Tag der Ausbildung"
         }, 
         {
          "name":"script",
