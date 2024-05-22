@@ -2592,7 +2592,7 @@
                     {
                      "fontfamily":"Press Start 2P",
                      "halign":"center",
-                     "text":"Team Sepia (BSM)",
+                     "text":"Team Sepia ",
                      "wrap":true
                     },
                  "type":"",
@@ -2610,7 +2610,7 @@
                     {
                      "fontfamily":"Press Start 2P",
                      "halign":"center",
-                     "text":"Einheit DMI mit Teams ProRail u.  ConstrOps (BSI)",
+                     "text":"Einheit DMI mit Teams ProRail u.  ConstrOps",
                      "wrap":true
                     },
                  "type":"",
@@ -2700,7 +2700,7 @@
                     {
                      "fontfamily":"Press Start 2P",
                      "halign":"center",
-                     "text":"Team Solutions for Rail Operational Timetable Provisioning (BSI)",
+                     "text":"Team Solutions for Rail Operational Timetable Provisioning",
                      "wrap":true
                     },
                  "type":"",
@@ -2826,7 +2826,7 @@
                     {
                      "fontfamily":"Press Start 2P",
                      "halign":"center",
-                     "text":"Team CapaCITI (BSI)",
+                     "text":"Team CapaCITI",
                      "wrap":true
                     },
                  "type":"",
@@ -3024,7 +3024,7 @@
                     {
                      "fontfamily":"Press Start 2P",
                      "halign":"center",
-                     "text":"Train Operation and Main-\ntenance (TOM)",
+                     "text":"Train Operation and Main-\ntenance",
                      "wrap":true
                     },
                  "type":"",

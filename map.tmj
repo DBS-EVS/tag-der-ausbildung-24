@@ -2322,7 +2322,7 @@
                      "fontfamily":"Press Start 2P",
                      "halign":"center",
                      "pixelsize":13,
-                     "text":"Willkommen\nbei der\nDiversIT",
+                     "text":"Willkommen\nbei der\nDiversITy",
                      "valign":"center",
                      "wrap":true
                     },
@@ -2507,12 +2507,12 @@
                 {
                  "height":168.499666666667,
                  "id":80,
-                 "name":"DiversITCouch",
+                 "name":"DiversITyCouch",
                  "properties":[
                         {
                          "name":"jitsiRoom",
                          "type":"string",
-                         "value":"DiversITCouch"
+                         "value":"DiversITyCouch"
                         }, 
                         {
                          "name":"jitsiTrigger",
@@ -2744,12 +2744,12 @@
                 {
                  "height":168.5,
                  "id":119,
-                 "name":"DiversITBillard",
+                 "name":"DiversITyBillard",
                  "properties":[
                         {
                          "name":"jitsiRoom",
                          "type":"string",
-                         "value":"DiversITBillard"
+                         "value":"DiversITyBillard"
                         }, 
                         {
                          "name":"jitsiTrigger",
@@ -2771,12 +2771,12 @@
                 {
                  "height":168.5,
                  "id":120,
-                 "name":"DiversITTV",
+                 "name":"DiversITyTV",
                  "properties":[
                         {
                          "name":"jitsiRoom",
                          "type":"string",
-                         "value":"DiversITTV"
+                         "value":"DiversITyTV"
                         }, 
                         {
                          "name":"jitsiTrigger",
@@ -2798,7 +2798,7 @@
                 {
                  "height":236.5,
                  "id":121,
-                 "name":"DiversITTV",
+                 "name":"DiversITyTV",
                  "properties":[
                         {
                          "name":"openTab",
