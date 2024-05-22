@@ -2303,8 +2303,8 @@
                  "type":"",
                  "visible":true,
                  "width":236,
-                 "x":525,
-                 "y":605.5
+                 "x":521,
+                 "y":282.5
                 }, 
                 {
                  "height":42.6666666666665,
@@ -2322,7 +2322,7 @@
                      "fontfamily":"Press Start 2P",
                      "halign":"center",
                      "pixelsize":13,
-                     "text":"Willkommen\nbei der\nDiversITy",
+                     "text":"Willkommen\nbei\nDiversITy",
                      "valign":"center",
                      "wrap":true
                     },
@@ -2711,8 +2711,8 @@
                  "type":"area",
                  "visible":true,
                  "width":1119.33333333333,
-                 "x":77.7395239691585,
-                 "y":334.098501676165
+                 "x":81.7395239691584,
+                 "y":338.098501676165
                 }, 
                 {
                  "height":139,
