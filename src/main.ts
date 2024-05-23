@@ -1,21 +1,5 @@
 /// <reference types="@workadventure/iframe-api-typings" />
 
-import WAE from "./wa-lib";
-
-let wae = new WAE();
-
-wae.init().then(() => {
-    anfangsPopup();
-    wae.popUp("locker","lockerPop","An dem Locker hängt ein Notiz.\nMöchtest du sie Lesen?",[{label: "Lesen",className: "primary",callback: (p) => {p.close();wae.popUpNoArea("lockerPop","Map Developed by Leon Prinz\nDanke an Team EVS <3",[wae.buttons.close])}},wae.buttons.close])
-});
-
-async function anfangsPopup() {
-    var pos = await WA.player.getPosition()
-    if(pos.x<1500){
-        wae.popUpNoArea("infoPopUp","Willkommen bei Workadveutre!\nBewege dich mit WASD, Pfeiltasten oder Rechtsklick.\nDieses Event wird teilweise Aufgezeichnet",[wae.buttons.close]);
-    }
-}
-
 import { bootstrapExtra } from "@workadventure/scripting-api-extra";
 
 console.log('Script started successfully');
@@ -23,6 +7,22 @@ console.log('Script started successfully');
 var btnImageFfm = "https://dbs-evs.github.io/tag-der-ausbildung-24/images/button_bubble_black.png";
 var btnImageBln = "https://dbs-evs.github.io/tag-der-ausbildung-24/images/button_bubble_red.png";
 var btnImageEf = "https://dbs-evs.github.io/tag-der-ausbildung-24/images/button_bubble_blue.png";
+
+let currentPopup: any = undefined;
+
+let startPopup = "infoPopUp";
+let startZone = "startZone";
+let startMsg = "Willkommen bei Workadveutre!\nBewege dich mit WASD, Pfeiltasten oder Rechtsklick.\nDieses Event wird teilweise Aufgezeichnet"
+
+let lockerPopup = "lockerPop";
+let lockerZone = "locker";
+let lockerMsg = "An dem Locker hängt ein Notiz.\nMöchtest du sie Lesen?";
+
+let noteMsg = "Initial map developed by Leon Prinz in 2023\nDanke an Team EVS <3"
+
+let labelRead = "Lesen";
+let labelNo = "Nein";
+let labelClose = "Schließen";
 
 // adding map navigation buttons
 WA.ui.actionBar.addButton({
@@ -55,6 +55,64 @@ WA.onInit().then(() => {
         console.log('Scripting API Extra ready');
     }).catch(e => console.error(e));
 
+    startingPopup();
+
+    WA.room.area.onLeave(startZone).subscribe(() => {
+        closePopUp(currentPopup);
+    });
+
+    WA.room.area.onEnter(lockerZone).subscribe(() => {
+        currentPopup = WA.ui.openPopup(lockerPopup, lockerMsg,[
+            {
+                label: labelRead,
+                callback: (popup => {
+                    popup.close();
+
+                    currentPopup = WA.ui.openPopup(lockerPopup, noteMsg,[
+                        {
+                            label: labelClose,
+                            callback: (popup => {
+                                popup.close();
+                                currentPopup = undefined;
+                            })
+                        }
+                    ])
+                })
+            },
+            {
+                label: labelNo,
+                callback: (popup => {
+                    popup.close();
+                    currentPopup = undefined;
+                })
+        }]);
+    })
+
+    WA.room.area.onLeave(lockerZone).subscribe(() => {
+        closePopUp(currentPopup);
+    })
+
 }).catch(e => console.error(e));
+
+async function startingPopup() {
+    var pos = await WA.player.getPosition()
+    if(pos.x<1500){
+        currentPopup = WA.ui.openPopup(startPopup, startMsg,[
+        {
+            label: labelClose,
+            callback: (popup => {
+            popup.close();
+            currentPopup = undefined;             
+            })
+        }]);
+    }
+}
+
+function closePopUp(currPopup: any){
+    if (currPopup !== undefined) {
+        currPopup.close();
+        currPopup = undefined;
+    }
+}
 
 export {};
