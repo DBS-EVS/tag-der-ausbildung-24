@@ -1323,24 +1323,6 @@
                          "width":113.333,
                          "x":2395.3335,
                          "y":2475.33333333333
-                        }, 
-                        {
-                         "height":45.9999999999995,
-                         "id":101,
-                         "name":"",
-                         "rotation":0,
-                         "text":
-                            {
-                             "fontfamily":"Press Start 2P",
-                             "pixelsize":8,
-                             "text":"Leon Prinz",
-                             "wrap":true
-                            },
-                         "type":"",
-                         "visible":true,
-                         "width":189.333333333333,
-                         "x":1922.16666666667,
-                         "y":2663
                         }],
                  "opacity":1,
                  "type":"objectgroup",
@@ -2821,6 +2803,17 @@
                  "width":93.6666666666667,
                  "x":675.5,
                  "y":1594.25
+                }, 
+                {
+                 "height":74.6666666666667,
+                 "id":129,
+                 "name":"lockerPop",
+                 "rotation":0,
+                 "type":"area",
+                 "visible":true,
+                 "width":206.166666666666,
+                 "x":2215.25,
+                 "y":84.9166666666667
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -3114,7 +3107,7 @@
          "y":0
         }],
  "nextlayerid":79,
- "nextobjectid":126,
+ "nextobjectid":130,
  "orientation":"orthogonal",
  "properties":[
         {

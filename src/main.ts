@@ -1,5 +1,22 @@
 /// <reference types="@workadventure/iframe-api-typings" />
 
+import WAE from "./wa-lib";
+
+let wae = new WAE();
+
+wae.init().then(() => {
+    anfangsPopup();
+    wae.cameraEvent(640,735,"bühne");
+    wae.popUp("locker","lockerPop","An dem Locker hängt ein Notiz.\nMöchtest du sie Lesen?",[{label: "Lesen",className: "primary",callback: (p) => {p.close();wae.popUpNoArea("lockerPop","Map Developed by Leon Prinz\nDanke an Team EVS <3",[wae.buttons.close])}},wae.buttons.close])
+});
+
+async function anfangsPopup() {
+    var pos = await WA.player.getPosition()
+    if(pos.x<1500){
+        wae.popUpNoArea("infoPopUp","Willkommen bei Workadveutre!\nBewege dich mit WASD, Pfeiltasten oder Rechtsklick.\nDieses Event wird teilweise Aufgezeichnet",[wae.buttons.close]);
+    }
+}
+
 import { bootstrapExtra } from "@workadventure/scripting-api-extra";
 
 console.log('Script started successfully');
@@ -36,15 +53,6 @@ WA.ui.actionBar.addButton({
 WA.onInit().then(() => {
     console.log('Scripting API ready');
     console.log('Player tags: ',WA.player.tags)
-
-    WA.room.area.onEnter('clock').subscribe(() => {
-        const today = new Date();
-        const time = today.getHours() + ":" + today.getMinutes();
-        currentPopup = WA.ui.openPopup("clockPopup", "It's " + time, []);
-    })
-
-    WA.room.area.onLeave('clock').subscribe(closePopup)
-
     // The line below bootstraps the Scripting API Extra library that adds a number of advanced properties/features to WorkAdventure
     bootstrapExtra().then(() => {
         console.log('Scripting API Extra ready');
