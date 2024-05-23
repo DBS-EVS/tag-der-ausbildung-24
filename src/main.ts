@@ -6,7 +6,6 @@ let wae = new WAE();
 
 wae.init().then(() => {
     anfangsPopup();
-    wae.cameraEvent(640,735,"bühne");
     wae.popUp("locker","lockerPop","An dem Locker hängt ein Notiz.\nMöchtest du sie Lesen?",[{label: "Lesen",className: "primary",callback: (p) => {p.close();wae.popUpNoArea("lockerPop","Map Developed by Leon Prinz\nDanke an Team EVS <3",[wae.buttons.close])}},wae.buttons.close])
 });
 
@@ -20,8 +19,6 @@ async function anfangsPopup() {
 import { bootstrapExtra } from "@workadventure/scripting-api-extra";
 
 console.log('Script started successfully');
-
-let currentPopup: any = undefined;
 
 var btnImageFfm = "https://dbs-evs.github.io/tag-der-ausbildung-24/images/button_bubble_black.png";
 var btnImageBln = "https://dbs-evs.github.io/tag-der-ausbildung-24/images/button_bubble_red.png";
@@ -59,12 +56,5 @@ WA.onInit().then(() => {
     }).catch(e => console.error(e));
 
 }).catch(e => console.error(e));
-
-function closePopup(){
-    if (currentPopup !== undefined) {
-        currentPopup.close();
-        currentPopup = undefined;
-    }
-}
 
 export {};
